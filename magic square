@@ -1,12 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 
-int main(void)
-{
+int main(void) {
 	int d, i, j, summ1 = 0, summ2 = 0, confirmation = 1;
 
 	int a[5][5];
-	for (i = 1; i < 6; i++); {
+	for (i = 1; i < 6; i++) {
 		printf("Enter 5 numbers of row %d\n", i);
 		for (j = 1; j < 6; j++) {
 			scanf("%d, ", &d);
@@ -49,5 +49,4 @@ int main(void)
 	if (confirmation = 1)
 		printf("Your array is magical!");
 	else printf("Your array is not magical...");
-	system("pause");
 }
