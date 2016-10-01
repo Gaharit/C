@@ -1,0 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <string.h>
+#define A int i, j;for (i = 2; i < 10; i++){for (j = 1; j < 11; j++)printf ("%d * %d = %d\n", i, j, i*j);}
+void main()
+{
+	A;
+}
