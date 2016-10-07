@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int a[5];
+	int i, n=5, value, direct;
+	printf("Enter %d numbers for the array: ", n);
+	for (i = 0; i < n; i++)
+		scanf("%d", &a[i]);
+	printf("\nEnter the value of displacement: ");
+	scanf("%d", &value);
+	printf("\nEnter '1' if you want to displace to right or '0' if you want to displace to left");
+	scanf("%d", &direct);
+	if (direct == 1)
+	{
+		while (; value > 0; value--)
+		{
+
+		}
+	}
+}
