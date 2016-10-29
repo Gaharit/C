@@ -1,0 +1,19 @@
+#include "list.h"
+#include <malloc.h>
+Node * create_node(int data)
+{
+	Node * new_node = (Node *)malloc(sizeof(Node));
+	if (new_node == NULL)
+	{
+		printf("Node was not created\n");
+		return NULL;
+	}
+
+	new_node->data = data;
+	new_node->next = NULL;
+	return new_node;
+}
+Node * create_list(int data)
+{
+	return create_node(data);
+}
