@@ -1,0 +1,67 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+typedef int node_data_t;
+typedef struct node Node;
+struct node
+{
+	node_data_t data;
+	struct node *next;
+};
+struct stack
+{
+	Node*top;
+};
+typedef struct stack Stack;
+Node* create_node(node_data_t number) {
+	Node* result = (Node*)malloc(sizeof(Node));
+	result->data = number;
+	result->next = NULL;
+	return result;
+}
+Stack* create_stack() {
+	return (Stack*)malloc(sizeof(Stack));
+}
+
+void push(Stack* stack, node_data_t number) {
+	Node* new_node = create_node(number);
+	new_node->next = stack->top;
+	stack->top = new_node;
+}
+node_data_t peek(Stack *stack)
+{
+	if (stack != NULL && stack->top!=NULL)
+	return stack->top->data;
+	return 0;
+}
+
+void pop(Stack *stack)
+{
+	Node *tmp;
+	if (stack != NULL && stack->top != NULL)
+	{
+		tmp = stack->top;
+		stack->top = stack->top->next;
+		free(tmp);
+	}
+
+	int is_empty(Stack * stack)
+	{
+		if (stack != NULL && stack->top != NULL)
+			return 0;
+		return 1;
+	}
+}
+int main()
+{
+	Stack* stack = create_stack();
+	int i;
+	for (i = 1; i < 5; i++)
+		push(stack, 1);
+
+	printf("stack to is%d\n", peek(stack));
+
+
+
+
+
