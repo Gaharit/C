@@ -1,0 +1,22 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+main()
+{
+	char c;
+	int check = 0;
+	FILE * File = fopen("song.txt", "r");
+	while ((c = fgetc(File)) != EOF) {
+		if ((c != '\t') && (c != ' ') && (check == 0))
+			printf("%c", c);
+		if (check == 1) {
+			if ((c != '\t') && (c != ' ') && (c != '\n'))
+				printf("%c", c);
+			check = 0;
+		}
+				if (c == '\n')
+					check = 1;
+	}
+	fclose(File);
+	printf("\n");
+}
