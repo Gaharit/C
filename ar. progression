@@ -1,0 +1,19 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int progression(int number, int value, int sum, int amount)
+{
+	sum += number;
+	number += value;
+	amount -= 1;
+	if (amount == 0)
+		return sum;
+	return progression(number, value, sum, amount);
+}
+main()
+{
+	int number, value, amount;
+	int sum = 0;
+	scanf("%d, %d, %d", &number, &value, &amount);
+	printf ("%d\n", progression(number, value, sum, amount));
+}
