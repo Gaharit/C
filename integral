@@ -1,0 +1,24 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+double f(int a, int b)
+{
+	double x, v=0, result;
+	int i=0;
+	for (x = a; x <= b; x += 0.1) {
+		v += cos(x);
+		i++;
+	}
+	result = v / i;
+	return result;
+}
+
+int main()
+{
+	int a = 0, b = 0;
+	double res;
+	printf("Enter a range: ");
+	scanf("%d %d", &a, &b);
+	res = f(a, b);
+	printf("\n %f", f(a, b));
+} 
